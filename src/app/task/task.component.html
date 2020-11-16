@@ -1,0 +1,37 @@
+<h2>Task List :</h2>
+<div>
+  <div class="input-group mb-5">
+    <input type="text" class="form-control" placeholder="Please Enter Your Task">
+    <div class="input-group-append">
+      <button class="btn btn-success" type="button">Button</button>
+    </div>
+  </div>
+  <div class="tbl">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Task</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of task; let i=index">
+          <th>
+            {{i+1}}
+          </th>
+          <td>
+            {{item.title}}
+          </td>
+          <td>
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger" (click)="deleteItem(item)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="thanks">
+    <h3>Thanks for using ;)</h3>
+  </div>
+</div>
